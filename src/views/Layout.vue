@@ -5,10 +5,10 @@
   <app-header></app-header>
   <!-- 吸顶头部组件 -->
   <app-header-sticky></app-header-sticky>
-  <div>
-    <p v-for="i in 100" :key="i">11</p>
+  <!-- 主体 -->
+  <main class="app-body">
     <router-view></router-view>
-  </div>
+  </main>
   <!-- 底部组件 -->
   <footer>底部组件</footer>
 </template>
