@@ -8,11 +8,11 @@ import store from '@/store'
 import router from '@/router'
 
 // 导出基准地址，原因：其他地方不是通过axios发请求的地方用上基准地址
-export const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
+export const baseURL = 'https:apipc-xiaotuxian-front.itheima.net/'
 const instance = axios.create({
   // axios 的一些配置，baseURL  timeout
   baseURL,
-  timeout: 5000
+  timeout: 10000
 })
 
 instance.interceptors.request.use(config => {
