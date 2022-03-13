@@ -6,6 +6,16 @@
         <HomeCategory />
         <!-- 轮播图 -->
         <HomeBanner />
+        <!-- 新鲜好物 -->
+        <HomeNew />
+        <!-- 人气推荐 -->
+        <HomeHot />
+        <!-- 热门品牌 -->
+        <HomeBrand />
+        <!-- 商品区域 -->
+        <HomeProduct />
+        <!-- 最新专题 -->
+        <HomeSpecial />
       </div>
     </div>
   </div>
@@ -13,11 +23,21 @@
 <script>
 import HomeCategory from "./components/home-category";
 import HomeBanner from "./components/home-banner";
+import HomeNew from "./components/home-new";
+import HomeHot from "./components/home-hot";
+import HomeBrand from "./components/home-brand.vue";
+import HomeProduct from "./components/home-product.vue";
+import HomeSpecial from "./components/home-special.vue";
 export default {
   name: "HomePage",
   components: {
     HomeCategory,
     HomeBanner,
+    HomeNew,
+    HomeHot,
+    HomeBrand,
+    HomeProduct,
+    HomeSpecial,
   },
 };
 </script>

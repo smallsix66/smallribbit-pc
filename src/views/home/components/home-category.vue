@@ -139,6 +139,7 @@ export default {
   height: 500px;
   background: rgba(255, 255, 255, 0.8);
   position: absolute;
+  z-index: 99;
   left: 250px;
   top: 0;
   display: none;

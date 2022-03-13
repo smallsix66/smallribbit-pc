@@ -25,6 +25,20 @@
    margin: 0;
  }
  
+ .fade{
+  &-leave {
+    &-active {
+      position: absolute;
+      width: 100%;
+      transition: opacity .5s .2s;
+      z-index: 1;
+    }
+    &-to {
+      opacity: 0;
+    }
+  }
+}
+
  a {
    text-decoration: none;
    color: #333;
