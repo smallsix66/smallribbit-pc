@@ -5,13 +5,13 @@
         @click="toggle(-1)"
         :class="{ disabled: index === 0 }"
         href="javascript:;"
-        class="iconfont icon-angle-left prev"
+        class="iconfont icon-arrow-left-filling prev"
       ></a>
       <a
         @click="toggle(1)"
         :class="{ disabled: index === 1 }"
         href="javascript:;"
-        class="iconfont icon-angle-right next"
+        class="iconfont icon-arrow-right-filling next"
       ></a>
     </template>
     <div ref="target" class="box">
