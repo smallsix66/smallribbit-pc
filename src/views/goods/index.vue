@@ -19,7 +19,10 @@
           <GoodsSales />
         </div>
         <div class="spec">
-          <GoodsName :goods="goods"/>
+          <!-- 名字区组件 -->
+          <GoodsName :goods="goods" />
+          <!-- 规格组件 -->
+          <GoodsSku :goods="goods" @change="changeSku" />
         </div>
       </div>
       <!-- 商品推荐 -->
@@ -42,18 +45,26 @@
 <script>
 import GoodsRelevant from "./components/goods-relevant";
 import GoodsImage from "./components/goods-image.vue";
-import GoodsSales from './components/goods-sales'
-import GoodsName from './components/goods-name'
+import GoodsSales from "./components/goods-sales";
+import GoodsName from "./components/goods-name";
+import GoodsSku from "./components/goods-sku";
 import { nextTick, ref, watch } from "vue";
 import { findGoods } from "@/api/product";
 import { useRoute } from "vue-router";
 export default {
   name: "XtxGoodsPage",
-  components: { GoodsRelevant, GoodsImage, GoodsSales, GoodsName },
+  components: { GoodsRelevant, GoodsImage, GoodsSales, GoodsName, GoodsSku },
   setup() {
     const goods = useGoods();
-    console.log("goods/index", goods);
-    return { goods };
+    // sku改变时候触发
+    const changeSku = (sku) => {
+      if (sku.skuId) {
+        goods.value.price = sku.price;
+        goods.value.oldPrice = sku.oldPrice;
+        goods.value.inventory = sku.inventory;
+      }
+    };
+    return { goods, changeSku };
   },
 };
 
